@@ -328,21 +328,6 @@ body{
     transition: transform 0.5s ease-in-out; /* Efek transisi halus */
 }
 
-/* Class ini akan ditambahkan lewat klik tombol */
-.nav-bottom.show {
-    transform: translateY(0); /* Muncul kembali ke posisi normal */
-}
-<script>
-  // Ambil elemen tombol dan navigasi
-  const tombolBuka = document.getElementById('btn-buka');
-  const navigasi = document.querySelector('.nav-bottom');
-
-  // Ketika tombol diklik
-  tombolBuka.addEventListener('click', function() {
-    // Tambahkan class 'show' pada navigasi
-    navigasi.classList.add('show');
-  });
-</script>      
     </style>
 
 </body>
