@@ -178,7 +178,7 @@ body{
     <span>RSVP</span>
   </a>
 </div>
-  }
+  
  
 <!-- SECTION BASMALAH -->
  <section class="ayat-section" id="ayat">
@@ -213,7 +213,7 @@ body{
   </div>
 
 </section>
-    }
+    
     <style>
 .ayat-section{
   width:100%;
@@ -327,7 +327,28 @@ body{
     transform: translateY(100%); /* Geser ke bawah layar */
     transition: transform 0.5s ease-in-out; /* Efek transisi halus */
 }
+.nav-bottom.show {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+     <script>
+  // Tunggu sampai semua elemen selesai dimuat
+  document.addEventListener("DOMContentLoaded", function() {
+    const tombol = document.getElementById('btn-buka');
+    const nav = document.querySelector('.nav-bottom');
 
+    if (tombol && nav) {
+      tombol.addEventListener('click', function(e) {
+        // Tambahkan class show ke navigasi
+        nav.classList.add('show');
+        console.log("Navigasi berhasil dimunculkan!");
+      });
+    } else {
+      console.error("Tombol atau Navigasi tidak ditemukan di HTML!");
+    }
+  });
+</script>
     </style>
 
 </body>
