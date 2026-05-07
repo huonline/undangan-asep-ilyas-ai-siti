@@ -1,355 +1,117 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan</title>
 
-<title>Undangan Pernikahan</title>
-
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
- <head>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      /* overflow: hidden dihapus agar bisa scroll setelah dibuka */
+      overflow-x: hidden; 
+    }
 
-body{
-  font-family:'Poppins', sans-serif;
-  overflow:hidden;
-}
+    /* Kunci agar tidak bisa scroll sebelum diklik */
+    body.no-scroll { overflow: hidden; }
 
-.cover{
-  width:100%;
-  height:100vh;
-  background:url("cover.jpeg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+    .cover {
+      width: 100%; height: 100vh;
+      background: url("cover.jpeg") center/cover no-repeat;
+      display: flex; justify-content: center; align-items: center;
+      text-align: center; position: relative; color: white;
+    }
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+    .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.35); }
+    .content { position: relative; z-index: 2; width: 100%; max-width: 600px; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+    .welcome { font-size: 18px; letter-spacing: 4px; margin-bottom: 35px; font-weight: 300; }
+    .foto { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 5px solid rgba(255,255,255,0.7); margin-bottom: 35px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .nama { font-family: 'Great Vibes', cursive; font-size: 58px; line-height: 1.2; margin-bottom: 35px; }
+    .tanggal { font-size: 32px; margin-bottom: 45px; }
+    .btn { display: inline-block; padding: 15px 35px; background: white; color: black; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; cursor: pointer; }
 
-  position:relative;
-  color:white;
-}
+    /* CSS NAVIGASI */
+    .nav-bottom {
+      position: fixed; bottom: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-around;
+      background: white; padding: 10px 0; z-index: 9999;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      transform: translateY(100%);
+      transition: transform 0.5s ease-in-out;
+    }
 
-.overlay{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.35);
-}
+    .nav-bottom.show { transform: translateY(0) !important; }
 
-.content{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-width:600px;
-  padding:20px;
+    .nav-item { text-decoration: none; color: #555; display: flex; flex-direction: column; align-items: center; font-size: 12px; }
+    .nav-item i { font-size: 20px; margin-bottom: 3px; }
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.welcome{
-  font-size:18px;
-  letter-spacing:4px;
-  margin-bottom:35px;
-  font-weight:300;
-}
-
-.foto{
-  width:220px;
-  height:220px;
-  object-fit:cover;
-  border-radius:50%;
-  border:5px solid rgba(255,255,255,0.7);
-  margin-bottom:35px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.nama{
-  font-family:'Great Vibes', cursive;
-  font-size:58px;
-  line-height:1.2;
-  margin-bottom:35px;
-}
-
-.save{
-  font-size:18px;
-  letter-spacing:3px;
-  margin-bottom:15px;
-}
-
-.tanggal{
-  font-size:32px;
-  margin-bottom:45px;
-}
-
-.btn{
-  display:inline-block;
-  padding:15px 35px;
-  background:white;
-  color:black;
-  text-decoration:none;
-  border-radius:50px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
-}
-
-</style>
+    /* SECTION AYAT */
+    .ayat-section {
+      width: 100%; min-height: 100vh;
+      background: url("cover.jpeg") center/cover no-repeat;
+      display: flex; justify-content: center; align-items: center;
+      padding: 40px 20px; position: relative;
+    }
+    .ayat-section::before { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.45); }
+    .ayat-box { position: relative; z-index: 2; max-width: 700px; width: 100%; background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 2px solid rgba(255,255,255,0.25); border-radius: 30px; padding: 60px 35px; text-align: center; color: white; }
+    .bismillah { font-size: 34px; margin-bottom: 40px; }
+    .arab { font-size: 28px; line-height: 2.1; margin-bottom: 35px; }
+    .arti { font-size: 16px; line-height: 1.9; }
+    .bunga { position: absolute; font-size: 35px; opacity: 0.8; }
+    .bunga1 { top: 15px; left: 20px; } .bunga2 { top: 20px; right: 20px; }
+  </style>
 </head>
 
-<body>
+<body class="no-scroll">
 
-<section class="cover">
-
-  <div class="overlay"></div>
-
-  <div class="content">
-
-    <div class="welcome">
-      WELCOME TO 
-        THE WEDDING OF
+  <section class="cover">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="welcome">WELCOME TO THE WEDDING OF</div>
+      <img src="pasangan.png" class="foto">
+      <div class="nama">Asep Ilyas <br>&<br> Ai Siti Rahmawati</div>
+      <div class="tanggal">07 Juni 2026</div>
+      <a href="#ayat" class="btn" id="btn-buka">💌 Buka Undangan</a>
     </div>
+  </section>
 
-    <!-- FOTO -->
-    <img src="pasangan.png" class="foto">
-
-    <!-- NAMA -->
-    <div class="nama">
-      Asep Ilyas <br>&<br> Ai Siti Rahmawati
-    </div>
-
-    <div class="save">
-      SAVE THE DATE
-    </div>
-
-    <div class="tanggal">
-      07 Juni 2026
-    </div>
-  
-  <a href="#ayat" class="btn" id="btn-buka">
-  💌 Buka Undangan
-</a>
-
+  <div class="nav-bottom">
+    <a href="#ayat" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="#couple" class="nav-item"><i class="fas fa-heart"></i><span>Couple</span></a>
+    <a href="#waktu" class="nav-item"><i class="fas fa-calendar-check"></i><span>Acara</span></a>
+    <a href="#lokasi" class="nav-item"><i class="fas fa-map-marker-alt"></i><span>Lokasi</span></a>
   </div>
 
-</section>
-  <!-- TOMBOL NAVIGASI -->
-<div class="nav-bottom">
-  <a href="#ayat" class="nav-item active">
-    <i class="fas fa-home"></i>
-    <span>Home</span>
-  </a>
-  <a href="#couple" class="nav-item">
-    <i class="fas fa-heart"></i>
-    <span>Couple</span>
-  </a>
-  <a href="#waktu" class="nav-item">
-    <i class="fas fa-calendar-check"></i>
-    <span>Acara</span>
-  </a>
-  <a href="#lokasi" class="nav-item">
-    <i class="fas fa-map-marker-alt"></i>
-    <span>Lokasi</span>
-  </a>
-  <a href="#gift" class="nav-item">
-    <i class="fas fa-gift"></i>
-    <span>Gift</span>
-  </a>
-  <a href="#rsvp" class="nav-item">
-    <i class="fas fa-envelope-open-text"></i>
-    <span>RSVP</span>
-  </a>
-</div>
-  
- 
-<!-- SECTION BASMALAH -->
- <section class="ayat-section" id="ayat">
-  <div class="ayat-box">
-
-    <!-- HIASAN -->
-    <div class="bunga bunga1">🌸</div>
-    <div class="bunga bunga2">🌿</div>
-    <div class="bunga bunga3">🌸</div>
-    <div class="bunga bunga4">🌿</div>
-
-    <!-- ISI -->
-    <div class="bismillah">
-      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+  <section class="ayat-section" id="ayat">
+    <div class="ayat-box">
+      <div class="bunga bunga1">🌸</div>
+      <div class="bunga bunga2">🌿</div>
+      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+      <div class="arab">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا...</div>
+      <div class="arti">"Dan di antara tanda-tanda kekuasaan-Nya..."</div>
     </div>
+  </section>
 
-    <div class="arab">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
-      لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
-    </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const tombol = document.getElementById('btn-buka');
+      const nav = document.querySelector('.nav-bottom');
 
-    <div class="arti">
-      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
-      untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa
-      tenteram kepadanya dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
-    </div>
-
-    <div class="sumber">
-      — QS. Ar-Rum : 21
-    </div>
-
-  </div>
-
-</section>
-    
-    <style>
-.ayat-section{
-  width:100%;
-  min-height:100vh;
-
-  background:url("cover.jpeg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  padding:40px 20px;
-  position:relative;
-}
-
-.ayat-section::before{
-  content:'';
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.45);
-}
-
-.ayat-box{
-  position:relative;
-  z-index:2;
-
-  max-width:700px;
-  width:100%;
-
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(8px);
-
-  border:2px solid rgba(255,255,255,0.25);
-
-  border-radius:30px;
-
-  padding:60px 35px;
-
-  text-align:center;
-  color:white;
-
-  overflow:hidden;
-
-  box-shadow:0 10px 40px rgba(0,0,0,0.3);
-}
-
-.bismillah{
-  font-size:34px;
-  line-height:1.8;
-  margin-bottom:40px;
-}
-
-.arab{
-  font-size:28px;
-  line-height:2.1;
-  margin-bottom:35px;
-}
-
-.arti{
-  font-size:16px;
-  line-height:1.9;
-  margin-bottom:25px;
-}
-
-.sumber{
-  font-size:18px;
-  letter-spacing:2px;
-}
-
-.bunga{
-  position:absolute;
-  font-size:35px;
-  opacity:0.8;
-}
-
-.bunga1{
-  top:15px;
-  left:20px;
-}
-
-.bunga2{
-  top:20px;
-  right:20px;
-}
-
-.bunga3{
-  bottom:15px;
-  left:25px;
-}
-
-.bunga4{
-  bottom:15px;
-  right:25px;
-}
-.nav-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background: white;
-    padding: 10px 0;
-    z-index: 9999;
-    
-    /* Sembunyikan dulu */
-    transform: translateY(100%); /* Geser ke bawah layar */
-    transition: transform 0.5s ease-in-out; /* Efek transisi halus */
-}
-.nav-bottom.show {
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-     <script>
-  // Tunggu sampai semua elemen selesai dimuat
-  document.addEventListener("DOMContentLoaded", function() {
-    const tombol = document.getElementById('btn-buka');
-    const nav = document.querySelector('.nav-bottom');
-
-    if (tombol && nav) {
-      tombol.addEventListener('click', function(e) {
-        // Tambahkan class show ke navigasi
-        nav.classList.add('show');
-        console.log("Navigasi berhasil dimunculkan!");
-      });
-    } else {
-      console.error("Tombol atau Navigasi tidak ditemukan di HTML!");
-    }
-  });
-</script>
-    </style>
+      if (tombol) {
+        tombol.addEventListener('click', function() {
+          // Munculkan Navigasi
+          nav.classList.add('show');
+          // Izinkan Scroll
+          document.body.classList.remove('no-scroll');
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
