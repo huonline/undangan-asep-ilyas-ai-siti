@@ -150,3 +150,134 @@ body{
 
 </body>
 </html>
+.ayat-section{
+  width:100%;
+  min-height:100vh;
+
+  background:url("cover.jpeg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px 20px;
+  position:relative;
+}
+
+.ayat-section::before{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+}
+
+.ayat-box{
+  position:relative;
+  z-index:2;
+
+  max-width:700px;
+  width:100%;
+
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(8px);
+
+  border:2px solid rgba(255,255,255,0.25);
+
+  border-radius:30px;
+
+  padding:60px 35px;
+
+  text-align:center;
+  color:white;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.bismillah{
+  font-size:34px;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.arab{
+  font-size:28px;
+  line-height:2.1;
+  margin-bottom:35px;
+}
+
+.arti{
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:25px;
+}
+
+.sumber{
+  font-size:18px;
+  letter-spacing:2px;
+}
+
+.bunga{
+  position:absolute;
+  font-size:35px;
+  opacity:0.8;
+}
+
+.bunga1{
+  top:15px;
+  left:20px;
+}
+
+.bunga2{
+  top:20px;
+  right:20px;
+}
+
+.bunga3{
+  bottom:15px;
+  left:25px;
+}
+
+.bunga4{
+  bottom:15px;
+  right:25px;
+}
+<!-- SECTION BASMALAH -->
+<section class="ayat-section">
+
+  <div class="ayat-box">
+
+    <!-- HIASAN -->
+    <div class="bunga bunga1">🌸</div>
+    <div class="bunga bunga2">🌿</div>
+    <div class="bunga bunga3">🌸</div>
+    <div class="bunga bunga4">🌿</div>
+
+    <!-- ISI -->
+    <div class="bismillah">
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+    </div>
+
+    <div class="arab">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+      لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+    </div>
+
+    <div class="arti">
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+      untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa
+      tenteram kepadanya dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
+    </div>
+
+    <div class="sumber">
+      — QS. Ar-Rum : 21
+    </div>
+
+  </div>
+
+</section>
