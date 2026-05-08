@@ -539,22 +539,50 @@
       height: 350px;
       border-width: 5px;
     }
-  } /* KURUNG INI YANG TADI ERROR, SEKARANG SUDAH BENAR */
-
-  /* --- CSS BARU UNTUK GIFT, RSVP & FOOTER --- */
-  .gift-section { padding: 80px 20px; text-align: center; background: #fff; color: #333; }
-  .gift-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;}
-  .gift-card { 
-    background: #fdfdfd; border: 1px solid #eee; padding: 30px; border-radius: 20px;
-    width: 300px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); color: #333;
+    /* KURUNG INI YANG TADI ERROR, SEKARANG SUDAH BENAR */
+/* --- CSS BARU UNTUK GIFT, RSVP & FOOTER --- */
+  .gift-section, .rsvp-section { 
+    padding: 80px 20px; 
+    text-align: center; 
+    background: url("cover.jpeg") center/cover no-repeat fixed; 
+    position: relative; 
+    color: white; 
   }
+  
+  .gift-section::before, .rsvp-section::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); /* Efek gelap agar tulisan terbaca */
+  }
+
+  .gift-container, .rsvp-container { 
+    position: relative; 
+    z-index: 2; 
+  }
+
+  .gift-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;}
+  
+  .gift-card { 
+    background: rgba(255, 255, 255, 0.95); /* Sedikit transparan biar elegan */
+    border: 1px solid #eee; padding: 30px; border-radius: 20px;
+    width: 300px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); color: #333;
+  }
+  
   .bank-logo { height: 30px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; }
 
-  .rsvp-section { padding: 80px 20px; background: #f9f9f9; text-align: center; color: #333; }
-  .rsvp-box { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; }
+  .rsvp-box { 
+    max-width: 500px; margin: 0 auto; 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 30px; border-radius: 20px; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+  }
+  
   .rsvp-box input, .rsvp-box select, .rsvp-box textarea { 
     width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; 
   }
+  
   .btn-send { width: 100%; padding: 15px; background: #ff4d4d; color: white; border: none; border-radius: 10px; font-weight: 600; cursor:pointer;}
 
   .footer-section { 
