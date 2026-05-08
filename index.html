@@ -258,21 +258,33 @@ body{
   </div>
 </section>
 
+  <audio id="myAudio" loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const tombolBuka = document.getElementById('btn-buka');
     const navigasi = document.querySelector('.nav-bottom');
+    const musik = document.getElementById('myAudio'); // Ambil elemen audio
 
     if (tombolBuka) {
       tombolBuka.addEventListener('click', function() {
         // 1. Munculkan Navigasi
         navigasi.classList.add('show');
-        // 2. Aktifkan scroll pada body
+        
+        // 2. Aktifkan scroll
         document.body.style.overflow = "auto";
+
+        // 3. PUTAR MUSIK
+        musik.play();
+        
+        console.log("Navigasi muncul & Musik diputar!");
       });
     }
   });
 </script>
-
+  
 </body>
 </html>
