@@ -1052,25 +1052,10 @@
     }, 1000);
   });
 </script>
- <script type="module">
+<script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCXxgO0OU9k-LvRhYY7bIuhvVpY5XgMWdk",
-  authDomain: "nuralam-90162.firebaseapp.com",
-  databaseURL: "https://nuralam-90162-default-rtdb.firebaseio.com",
-  projectId: "nuralam-90162",
-  storageBucket: "nuralam-90162.firebasestorage.app",
-  messagingSenderId: "371833786531",
-  appId: "1:371833786531:web:fc49153e527ac617612f16",
-  measurementId: "G-T16MWNKY0V"
-};
-
-const app = initializeApp(firebaseConfig);
-
-</script>
-  <script type="module">
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
   getFirestore,
@@ -1079,9 +1064,8 @@ import {
   onSnapshot,
   query,
   orderBy
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCXxgO0OU9k-LvRhYY7bIuhvVpY5XgMWdk",
@@ -1105,27 +1089,44 @@ form.addEventListener("submit", async (e) => {
   const hadir = form.querySelector("select").value;
   const ucapan = form.querySelector("textarea").value;
 
-  await addDoc(collection(db, "ucapan"), {
-    nama,
-    hadir,
-    ucapan,
-    waktu: new Date()
-  });
+  try {
 
-  alert("Ucapan berhasil dikirim 😁");
+    await addDoc(collection(db, "ucapan"), {
+      nama,
+      hadir,
+      ucapan,
+      waktu: new Date()
+    });
 
-  form.reset();
+    alert("Ucapan berhasil dikirim 😁");
+
+    form.reset();
+
+  } catch(error) {
+
+    alert("Error: " + error.message);
+
+  }
 
 });
 
-const daftarUcapan = document.getElementById("daftarUcapan");
+const daftarUcapan =
+document.getElementById("daftarUcapan");
 
-const hadirCount = document.getElementById("hadirCount");
-const tidakHadirCount = document.getElementById("tidakHadirCount");
-const raguCount = document.getElementById("raguCount");
-const totalCount = document.getElementById("totalCount");
+const hadirCount =
+document.getElementById("hadirCount");
 
-const q = query(collection(db, "ucapan"), orderBy("waktu", "desc"));
+const tidakHadirCount =
+document.getElementById("tidakHadirCount");
+
+const raguCount =
+document.getElementById("raguCount");
+
+const totalCount =
+document.getElementById("totalCount");
+
+const q =
+query(collection(db, "ucapan"), orderBy("waktu", "desc"));
 
 onSnapshot(q, (snapshot) => {
 
@@ -1139,9 +1140,9 @@ onSnapshot(q, (snapshot) => {
 
     const data = doc.data();
 
-    if (data.hadir === "Hadir") hadir++;
-    if (data.hadir === "Tidak Hadir") tidak++;
-    if (data.hadir === "Masih Ragu") ragu++;
+    if(data.hadir === "Hadir") hadir++;
+    if(data.hadir === "Tidak Hadir") tidak++;
+    if(data.hadir === "Masih Ragu") ragu++;
 
     daftarUcapan.innerHTML += `
       <div class="ucapan-item">
