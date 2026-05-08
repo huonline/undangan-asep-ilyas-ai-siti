@@ -531,6 +531,42 @@ body{
 @media (max-width: 600px) {
   .acara-box {
     width: 100%; /* Kotak memenuhi layar di HP */
+  .lokasi-section {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* Warna netral agar peta terlihat menonjol */
+  display: flex;
+  justify-content: center;
+}
+
+.lokasi-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.map-frame {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 8px solid white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  background: white;
+}
+
+.info-tambahan {
+  margin-top: 25px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsif HP */
+@media (max-width: 600px) {
+  .map-frame {
+    height: 350px;
+    border-width: 5px;
   }
 }
 </style>
@@ -677,6 +713,27 @@ body{
       
       <div class="scroll-down-icon">
         <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="lokasi-section" id="lokasi">
+  <div class="lokasi-container">
+    <div class="peta-wrapper animate-on-scroll">
+      <div class="map-frame">
+        <iframe 
+          src="<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3956.324018329461!2d108.24618472!3d-7.42935016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65f7cc0769360f%3A0xed762867b8c83272!2sTOKO%20TAQY!5e0!3m2!1sid!2sid!4v1778232921062!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      
+      <div class="info-tambahan animate-on-scroll">
+        <p>Buka di aplikasi untuk navigasi yang lebih akurat</p>
       </div>
     </div>
   </div>
