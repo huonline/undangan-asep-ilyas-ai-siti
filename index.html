@@ -319,6 +319,48 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
+  .countdown-wrapper {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+}
+
+.menuju {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 15px;
+  min-width: 75px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown-item p {
+  font-size: 11px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 </style>
 </head>
 
@@ -393,6 +435,31 @@ body{
       </div>
     </div>
   </div>
+    </div>
+
+    <div class="countdown-wrapper animate-on-scroll">
+      <p class="menuju">Menuju Hari Bahagia</p>
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <p>Hari</p>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <p>Jam</p>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <p>Menit</p>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <p>Detik</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
   <audio id="myAudio" loop>
@@ -438,6 +505,17 @@ document.querySelectorAll('.animate-on-scroll').forEach((el) => {
   observer.observe(el);
 
   observer.observe(el);
+  const targetDate = new Date("June 7, 2026 08:00:00").getTime();
+
+setInterval(function() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+  document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+  document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+  document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+}, 1000);
 }); 
   });//Penutup DOMContentLoaded  
 </script>
