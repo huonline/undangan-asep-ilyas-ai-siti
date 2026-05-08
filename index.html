@@ -319,10 +319,21 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
-  .countdown-wrapper {
+.countdown-wrapper {
+  width: 100%; /* Memenuhi lebar layar */
+  flex-basis: 100%; /* Memaksa flexbox memindahkan ini ke baris baru */
   text-align: center;
-  margin-top: 60px;
-  padding-bottom: 20px;
+  margin-top: 50px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%; /* Pastikan kontainernya juga full */
 }
 
 .menuju {
