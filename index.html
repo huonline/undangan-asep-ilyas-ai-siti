@@ -564,14 +564,56 @@
 
   .gift-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;}
   
-  .gift-card { 
-    background: rgba(255, 255, 255, 0.95); /* Sedikit transparan biar elegan */
-    border: 1px solid #eee; padding: 30px; border-radius: 20px;
-    width: 300px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); color: #333;
-  }
-  
-  .bank-logo { height: 30px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; }
+  .gift-card{
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 30px 25px;
+  border-radius: 25px;
+  width: 320px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
 
+.gift-card:hover{
+  transform: translateY(-8px);
+}
+
+.bank-logo{
+  width: 120px;
+  height: auto;
+  margin: 10px auto 20px;
+  display: block;
+}
+
+.nomor-rek{
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.atas-nama{
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.btn-copy{
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: white;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-copy:hover{
+  background: #ff4d4d;
+  color: white;
+}
   .rsvp-box { 
     max-width: 500px; margin: 0 auto; 
     background: rgba(255, 255, 255, 0.95); 
@@ -757,24 +799,26 @@
     
     <div class="gift-wrapper">
       <div class="gift-card">
-        <div class="icon-header"><i class="fas fa-university"></i></div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" alt="BRI" class="bank-logo bri">
-        <p class="nomor-rek" style="font-weight:bold;">444401015688504</p>
-        <p class="atas-nama">A.n Asep Ilyas</p>
-        <button class="btn-copy" onclick="salinTeks('444401015688504')">
-          <i class="far fa-copy"></i> Salin Rekening
-        </button>
-      </div>
+  <img src="bri.png" alt="BRI" class="bank-logo">
 
-      <div class="gift-card">
-        <div class="icon-header"><i class="fas fa-wallet"></i></div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_dana_blue.svg" alt="DANA" class="bank-logo">
-        <p class="nomor-rek" style="font-weight:bold;">081234567890</p>
-        <p class="atas-nama">A.n Ai Siti Rahmawati</p>
-        <button class="btn-copy" onclick="salinTeks('081234567890')">
-          <i class="far fa-copy"></i> Salin Nomor
-        </button>
-      </div>
+  <p class="nomor-rek">444401015688504</p>
+  <p class="atas-nama">A.n Asep Ilyas</p>
+
+  <button class="btn-copy" onclick="salinTeks('444401015688504')">
+    <i class="far fa-copy"></i> Salin Rekening
+  </button>
+</div>
+
+<div class="gift-card">
+  <img src="dana.png" alt="DANA" class="bank-logo">
+
+  <p class="nomor-rek">6282317958531</p>
+  <p class="atas-nama">A.n Asep Ilyas</p>
+
+  <button class="btn-copy" onclick="salinTeks('6282317958531')">
+    <i class="far fa-copy"></i> Salin Nomor
+  </button>
+</div>
     </div>
   </div>
 </section>
