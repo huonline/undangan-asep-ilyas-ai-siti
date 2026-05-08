@@ -216,6 +216,106 @@ body{
 .nav-item.active {
     color: #ff4d4d;
 }
+  /* CSS COUPLE SECTION */
+.couple-section {
+  width: 100%;
+  min-height: 110vh;
+  background: url("cover.jpeg") center/cover no-repeat fixed;
+  position: relative;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+.overlay-couple {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay gelap agar teks terbaca */
+}
+
+.couple-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+}
+
+.couple-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.salam { font-style: italic; margin-bottom: 15px; }
+.hormat { font-size: 14px; opacity: 0.9; line-height: 1.6; }
+
+/* LAYOUT MEMPELAI STAGGERED */
+.couple-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.couple-box.wanita {
+  flex-direction: row-reverse; /* Wanita di kanan */
+  margin-top: -20px;
+  text-align: right;
+}
+
+/* FOTO BULAT STYLISH */
+.foto-frame {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.foto-mempelai {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.ornamen-bunga {
+  position: absolute;
+  font-size: 40px;
+  z-index: 3;
+}
+
+.bunga-pria { top: -10px; right: -10px; }
+.bunga-wanita { bottom: -10px; left: -10px; }
+
+.nama-mempelai {
+  font-family: 'Great Vibes', cursive;
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
+.putra-dari { font-size: 14px; opacity: 0.8; }
+
+.dan-tanda {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ANIMASI SCROLL (HIDE AWAL) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 
@@ -258,6 +358,40 @@ body{
   </div>
 </section>
 
+  <section class="couple-section" id="couple">
+  <div class="overlay-couple"></div>
+  
+  <div class="couple-container">
+    <div class="couple-intro animate-on-scroll">
+      <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+      <p class="salam">Assalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+      <p class="hormat">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri hari bahagia kami:</p>
+    </div>
+
+    <div class="couple-box pria animate-on-scroll">
+      <div class="foto-frame">
+        <img src="pria.jpg" class="foto-mempelai"> <div class="ornamen-bunga bunga-pria">🌸</div>
+      </div>
+      <div class="info-mempelai">
+        <h2 class="nama-mempelai">Asep Ilyas</h2>
+        <p class="putra-dari">Putra dari Bapak Fulan & Ibu Fulanah</p>
+      </div>
+    </div>
+
+    <div class="dan-tanda animate-on-scroll">&</div>
+
+    <div class="couple-box wanita animate-on-scroll">
+      <div class="foto-frame">
+        <img src="wanita.jpg" class="foto-mempelai"> <div class="ornamen-bunga bunga-wanita">🌿</div>
+      </div>
+      <div class="info-mempelai">
+        <h2 class="nama-mempelai">Ai Siti Rahmawati</h2>
+        <p class="putra-dari">Putri dari Bapak Fulan & Ibu Fulan </p>
+      </div>
+    </div>
+  </div>
+</section>
+
   <audio id="myAudio" loop>
   <source src="music.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -281,6 +415,22 @@ body{
         musik.play();
         
         console.log("Navigasi muncul & Musik diputar!");
+    // FUNGSI ANIMASI SCROLL
+const observerOptions = {
+  threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('appear');
+    }
+  });
+}, observerOptions);
+
+// Daftarkan semua elemen yang ingin dianimasikan
+document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+  observer.observe(el);
       });
     }
   });
