@@ -322,21 +322,27 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
+.couple-section {
+  width: 100%;
+  min-height: 110vh;
+  background: url("cover.jpeg") center/cover no-repeat fixed;
+  position: relative;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column; /* TAMBAHKAN INI agar susun ke bawah */
+  align-items: center;    /* TAMBAHKAN INI agar semua di tengah */
+  justify-content: flex-start; /* Ubah ini agar tidak numpuk di tengah vertikal */
+  color: white;
+  overflow: hidden;
+}
+
 .countdown-wrapper {
-  width: 100%; /* Memenuhi lebar layar */
-  flex-basis: 100%; /* Memaksa flexbox memindahkan ini ke baris baru */
+  width: 100%;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 50px; /* Jarak dari foto wanita */
   padding: 20px 0;
   position: relative;
   z-index: 5;
-}
-
-.countdown-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  width: 100%; /* Pastikan kontainernya juga full */
 }
 
 .menuju {
