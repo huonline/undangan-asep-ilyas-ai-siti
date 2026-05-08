@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Pernikahan</title>
+<title>Undangan Pernikahan - Asep & Ai Siti</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -11,137 +11,164 @@
 <style>
   html { scroll-behavior: smooth; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Poppins', sans-serif; overflow:hidden; background: #fff; }
+  body { font-family:'Poppins', sans-serif; overflow:hidden; background: #fff; color: #333; }
 
   /* --- COVER --- */
-  .cover{
+  .cover {
     width:100%; height:100vh; background:url("cover.jpeg") center/cover no-repeat;
     display:flex; justify-content:center; align-items:center; text-align:center; position:relative; color:white;
   }
-  .overlay{ position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.35); }
-  .content{ position:relative; z-index:2; width:100%; max-width:600px; padding:20px; display:flex; flex-direction:column; align-items:center; }
-  .foto{ width:200px; height:200px; object-fit:cover; border-radius:50%; border:5px solid white; margin-bottom:20px; }
-  .nama{ font-family:'Great Vibes', cursive; font-size:50px; margin-bottom:20px; }
-  .btn{ padding:12px 30px; background:white; color:black; text-decoration:none; border-radius:50px; font-weight:600; cursor: pointer; }
+  .overlay { position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.4); }
+  .content { position:relative; z-index:2; padding:20px; }
+  .foto-utama { width:180px; height:180px; object-fit:cover; border-radius:50%; border:5px solid white; margin-bottom:20px; }
+  .nama-cover { font-family:'Great Vibes', cursive; font-size:50px; margin-bottom:10px; }
+  .btn-buka { padding:12px 30px; background:white; color:#333; text-decoration:none; border-radius:50px; font-weight:600; cursor:pointer; display:inline-block; margin-top:20px; }
 
   /* --- NAVIGASI --- */
   .nav-bottom {
-      position: fixed; bottom: 0; left: 0; width: 100%; display: flex; justify-content: space-around;
-      background: white; padding: 10px 0; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      transform: translateY(100%); transition: transform 0.5s ease;
+    position:fixed; bottom:0; width:100%; display:flex; justify-content:space-around;
+    background:white; padding:10px 0; z-index:999; box-shadow:0 -2px 10px rgba(0,0,0,0.1);
+    transform:translateY(100%); transition:0.5s;
   }
-  .nav-bottom.show { transform: translateY(0) !important; }
-  .nav-item { text-decoration: none; color: #555; display: flex; flex-direction: column; align-items: center; font-size: 11px; }
-  .nav-item i { font-size: 18px; }
-  .nav-item.active { color: #ff4d4d; }
+  .nav-bottom.show { transform:translateY(0); }
+  .nav-item { text-decoration:none; color:#777; font-size:10px; text-align:center; }
+  .nav-item i { display:block; font-size:18px; margin-bottom:2px; }
+
+  /* --- SECTIONS GENERAL --- */
+  section { padding: 80px 20px; text-align: center; width: 100%; }
+  .judul-griet { font-family:'Great Vibes', cursive; font-size: 45px; color: #333; margin-bottom: 30px; }
 
   /* --- AYAT --- */
-  .ayat-section { padding: 80px 20px; background: #fdfdfd; text-align: center; color: #333; position: relative; }
-  .ayat-box { max-width: 600px; margin: 0 auto; }
-  .arab { font-size: 24px; margin: 20px 0; line-height: 2; }
+  .ayat-section { background: #fdfdfd; }
+  .arab { font-size: 26px; line-height: 2; margin-bottom: 20px; }
 
   /* --- COUPLE --- */
-  .couple-section { padding: 80px 20px; text-align: center; background: #fff; }
-  .foto-mempelai { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #ff4d4d; }
-  .nama-mempelai { font-family: 'Great Vibes', cursive; font-size: 35px; color: #333; margin: 10px 0; }
+  .mempelai-box { margin-bottom: 40px; }
+  .foto-mempelai { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #eee; }
+  .nama-mempelai { font-family: 'Great Vibes', cursive; font-size: 35px; margin: 10px 0; }
 
-  /* --- GIFT SECTION (INI YANG TADI BERANTAKAN) --- */
-  .gift-section { padding: 80px 20px; text-align: center; background: #ffffff; color: #333; }
-  .gift-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-  .gift-card { 
-    background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 20px;
-    width: 280px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  }
-  .bank-logo { height: 30px; margin: 0 auto 15px; display: block; }
-  .nomor-rek { font-weight: bold; font-size: 18px; margin: 10px 0; }
-  .btn-copy { padding: 8px 15px; background: #f0f0f0; border: none; border-radius: 5px; cursor: pointer; font-size: 12px; }
+  /* --- ACARA & LOKASI --- */
+  .acara-section { background: #f9f9f9; }
+  .box-acara { background: white; padding: 30px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+  .map-frame { border-radius: 20px; overflow: hidden; margin-top: 20px; border: 5px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+  /* --- GIFT --- */
+  .gift-card { background: white; border: 1px solid #eee; padding: 30px; border-radius: 20px; max-width: 300px; margin: 0 auto 20px; }
+  .bank-logo { height: 30px; margin-bottom: 15px; }
+  .btn-copy { padding: 8px 15px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
 
   /* --- RSVP & FOOTER --- */
-  .rsvp-section { padding: 80px 20px; background: #f9f9f9; text-align: center; }
-  .rsvp-box { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+  .rsvp-box { max-width: 500px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 20px; border: 1px solid #eee; }
   .rsvp-box input, .rsvp-box select, .rsvp-box textarea { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; }
   .btn-send { width: 100%; padding: 12px; background: #ff4d4d; color: white; border: none; border-radius: 8px; font-weight: bold; }
-  
-  .footer-section { padding: 60px 20px; text-align: center; background: #333; color: white; }
-  .judul-griet { font-family: 'Great Vibes', cursive; font-size: 40px; margin-bottom: 15px; }
+  .footer { background: #333; color: white; padding: 60px 20px; }
 
   /* --- ANIMASI --- */
-  .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: 1s ease; }
-  .animate-on-scroll.appear { opacity: 1; transform: translateY(0); }
+  .animate { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+  .animate.appear { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 
 <body>
 
-<section class="cover">
+<section class="cover" style="padding:0;">
   <div class="overlay"></div>
   <div class="content">
-    <div class="welcome">THE WEDDING OF</div>
-    <img src="pasangan.png" class="foto">
-    <div class="nama">Asep & Ai Siti</div>
-    <div class="tanggal">07 Juni 2026</div>
-    <a href="#ayat" class="btn" id="btn-buka">💌 Buka Undangan</a>
+    <div style="letter-spacing:3px; margin-bottom:20px;">WEDDING OF</div>
+    <img src="pasangan.png" class="foto-utama">
+    <h1 class="nama-cover">Asep & Ai Siti</h1>
+    <p>07 Juni 2026</p>
+    <a href="#ayat" class="btn-buka" id="btn-buka">💌 Buka Undangan</a>
   </div>
 </section>
 
 <div class="nav-bottom">
-  <a href="#ayat" class="nav-item"><i class="fas fa-home"></i><span>Home</span></a>
-  <a href="#couple" class="nav-item"><i class="fas fa-heart"></i><span>Couple</span></a>
-  <a href="#gift" class="nav-item"><i class="fas fa-gift"></i><span>Gift</span></a>
-  <a href="#rsvp" class="nav-item"><i class="fas fa-envelope"></i><span>RSVP</span></a>
+  <a href="#ayat" class="nav-item"><i class="fas fa-home"></i>Home</a>
+  <a href="#couple" class="nav-item"><i class="fas fa-heart"></i>Couple</a>
+  <a href="#acara" class="nav-item"><i class="fas fa-calendar"></i>Acara</a>
+  <a href="#gift" class="nav-item"><i class="fas fa-gift"></i>Gift</a>
 </div>
 
-<section class="ayat-section" id="ayat">
-  <div class="ayat-box animate-on-scroll">
-    <div class="arab">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْواجاً</div>
+<section id="ayat" class="ayat-section">
+  <div class="animate">
+    <div class="arab">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
     <p class="arti">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri..."</p>
-    <p class="sumber">— QS. Ar-Rum : 21</p>
+    <p>— QS. Ar-Rum : 21</p>
   </div>
 </section>
 
-<section class="gift-section" id="gift">
-  <div class="animate-on-scroll">
-    <h2 class="judul-griet">Wedding Gift</h2>
-    <p>Tanda kasih dapat disampaikan melalui:</p>
-    <div class="gift-wrapper">
-      <div class="gift-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" class="bank-logo">
-        <p class="nomor-rek">444401015688504</p>
-        <p>A.n Asep Ilyas</p>
-        <button class="btn-copy" onclick="salinTeks('444401015688504')">Salin Rekening</button>
-      </div>
-    </div>
+<section id="couple">
+  <h2 class="judul-griet animate">Mempelai</h2>
+  <div class="mempelai-box animate">
+    <img src="pria.jpeg" class="foto-mempelai">
+    <h3 class="nama-mempelai">Asep Ilyas</h3>
+    <p>Putra dari Bapak Fulan & Ibu Fulanah</p>
+  </div>
+  <div class="judul-griet animate" style="font-size:30px;">&</div>
+  <div class="mempelai-box animate">
+    <img src="wanita.jpeg" class="foto-mempelai">
+    <h3 class="nama-mempelai">Ai Siti Rahmawati</h3>
+    <p>Putri dari Bapak Fulan & Ibu Fulanah</p>
   </div>
 </section>
 
-<section class="rsvp-section" id="rsvp">
-  <div class="rsvp-box animate-on-scroll">
+<section id="acara" class="acara-section">
+  <h2 class="judul-griet animate">Waktu & Lokasi</h2>
+  <div class="box-acara animate">
+    <h3>Akad Nikah</h3>
+    <p>08.00 - 10.00 WIB</p>
+  </div>
+  <div class="box-acara animate">
+    <h3>Resepsi</h3>
+    <p>10.00 - Selesai</p>
+  </div>
+  <p class="animate">Kampung citundun, RT.003/RW.008, Setiawargi, Kec. Tamansari, Tasikmalaya</p>
+  <div class="map-frame animate">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3956.3240!2d108.246!3d-7.429!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65f7cc0769360f%3A0xed762867b8c83272!2sToko%20Taqy!5e0!3m2!1sid!2sid!4v1715165000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section id="gift">
+  <h2 class="judul-griet animate">Wedding Gift</h2>
+  <div class="gift-card animate">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg" class="bank-logo">
+    <p><b>444401015688504</b></p>
+    <p>A.n Asep Ilyas</p>
+    <button class="btn-copy" onclick="salin('444401015688504')">Salin Rekening</button>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="rsvp-box animate">
     <h2 class="judul-griet">RSVP</h2>
-    <form id="rsvp-form">
-      <input type="text" placeholder="Nama Lengkap" required>
-      <select required><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option></select>
+    <form>
+      <input type="text" placeholder="Nama Lengkap">
+      <select><option>Hadir</option><option>Tidak Hadir</option></select>
       <textarea placeholder="Ucapan Doa"></textarea>
-      <button type="submit" class="btn-send">Kirim Konfirmasi</button>
+      <button type="submit" class="btn-send">Kirim</button>
     </form>
   </div>
 </section>
 
-<section class="footer-section">
-  <h2 class="judul-griet">Terima Kasih</h2>
+<footer class="footer">
+  <h2 class="judul-griet" style="color:white;">Terima Kasih</h2>
   <p>Asep & Ai Siti</p>
-</section>
+  <p style="font-size:10px; margin-top:20px; opacity:0.5;">Dibuat oleh Nur Alam</p>
+</footer>
 
-<audio id="myAudio" loop><source src="music.mp3" type="audio/mpeg"></audio>
+<audio id="musik" loop><source src="music.mp3" type="audio/mpeg"></audio>
 
 <script>
-  function salinTeks(teks) {
-    navigator.clipboard.writeText(teks).then(() => alert("Berhasil disalin!"));
+  function salin(teks) {
+    navigator.clipboard.writeText(teks).then(() => alert("Teks disalin!"));
   }
 
-  document.getElementById('btn-buka').addEventListener('click', function() {
+  document.getElementById('btn-buka').addEventListener('click', function(e) {
+    e.preventDefault();
     document.querySelector('.nav-bottom').classList.add('show');
     document.body.style.overflow = "auto";
-    document.getElementById('myAudio').play();
+    document.getElementById('musik').play();
+    window.scrollTo(0, document.getElementById('ayat').offsetTop);
   });
 
   const observer = new IntersectionObserver((entries) => {
@@ -150,7 +177,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 </script>
 
 </body>
