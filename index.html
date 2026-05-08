@@ -6,13 +6,11 @@
 
 <title>Undangan Pernikahan</title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <style>
-
+<style>
+/* --- CSS AWAL (TIDAK BERUBAH) --- */
 *{
   margin:0;
   padding:0;
@@ -21,7 +19,7 @@
 
 body{
   font-family:'Poppins', sans-serif;
-  overflow:hidden;
+  overflow:hidden; /* Terkunci di awal */
 }
 
 .cover{
@@ -31,12 +29,10 @@ body{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-
   position:relative;
   color:white;
 }
@@ -54,7 +50,6 @@ body{
   width:100%;
   max-width:600px;
   padding:20px;
-
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -104,128 +99,24 @@ body{
   border-radius:50px;
   font-weight:600;
   transition:0.3s;
+  cursor: pointer;
 }
 
 .btn:hover{
   transform:scale(1.05);
 }
 
-</style>
-</head>
-
-<body>
-
-<section class="cover">
-
-  <div class="overlay"></div>
-
-  <div class="content">
-
-    <div class="welcome">
-      WELCOME TO 
-        THE WEDDING OF
-    </div>
-
-    <!-- FOTO -->
-    <img src="pasangan.png" class="foto">
-
-    <!-- NAMA -->
-    <div class="nama">
-      Asep Ilyas <br>&<br> Ai Siti Rahmawati
-    </div>
-
-    <div class="save">
-      SAVE THE DATE
-    </div>
-
-    <div class="tanggal">
-      07 Juni 2026
-    </div>
-  
-  <a href="#ayat" class="btn" id="btn-buka">
-  💌 Buka Undangan
-</a>
-
-  </div>
-
-</section>
-  <!-- TOMBOL NAVIGASI -->
-<div class="nav-bottom">
-  <a href="#ayat" class="nav-item active">
-    <i class="fas fa-home"></i>
-    <span>Home</span>
-  </a>
-  <a href="#couple" class="nav-item">
-    <i class="fas fa-heart"></i>
-    <span>Couple</span>
-  </a>
-  <a href="#waktu" class="nav-item">
-    <i class="fas fa-calendar-check"></i>
-    <span>Acara</span>
-  </a>
-  <a href="#lokasi" class="nav-item">
-    <i class="fas fa-map-marker-alt"></i>
-    <span>Lokasi</span>
-  </a>
-  <a href="#gift" class="nav-item">
-    <i class="fas fa-gift"></i>
-    <span>Gift</span>
-  </a>
-  <a href="#rsvp" class="nav-item">
-    <i class="fas fa-envelope-open-text"></i>
-    <span>RSVP</span>
-  </a>
-</div>
-  
- 
-<!-- SECTION BASMALAH -->
- <section class="ayat-section" id="ayat">
-  <div class="ayat-box">
-
-    <!-- HIASAN -->
-    <div class="bunga bunga1">🌸</div>
-    <div class="bunga bunga2">🌿</div>
-    <div class="bunga bunga3">🌸</div>
-    <div class="bunga bunga4">🌿</div>
-
-    <!-- ISI -->
-    <div class="bismillah">
-      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
-    </div>
-
-    <div class="arab">
-      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
-      لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
-    </div>
-
-    <div class="arti">
-      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
-      untukmu pasangan hidup dari jenismu sendiri supaya kamu merasa
-      tenteram kepadanya dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
-    </div>
-
-    <div class="sumber">
-      — QS. Ar-Rum : 21
-    </div>
-
-  </div>
-
-</section>
-    
-    <style>
+/* --- CSS AYAT (TIDAK BERUBAH) --- */
 .ayat-section{
   width:100%;
   min-height:100vh;
-
   background:url("cover.jpeg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   padding:40px 20px;
   position:relative;
 }
@@ -241,24 +132,16 @@ body{
 .ayat-box{
   position:relative;
   z-index:2;
-
   max-width:700px;
   width:100%;
-
   background:rgba(255,255,255,0.12);
   backdrop-filter:blur(8px);
-
   border:2px solid rgba(255,255,255,0.25);
-
   border-radius:30px;
-
   padding:60px 35px;
-
   text-align:center;
   color:white;
-
   overflow:hidden;
-
   box-shadow:0 10px 40px rgba(0,0,0,0.3);
 }
 
@@ -291,26 +174,12 @@ body{
   opacity:0.8;
 }
 
-.bunga1{
-  top:15px;
-  left:20px;
-}
+.bunga1{ top:15px; left:20px; }
+.bunga2{ top:20px; right:20px; }
+.bunga3{ bottom:15px; left:25px; }
+.bunga4{ bottom:15px; right:25px; }
 
-.bunga2{
-  top:20px;
-  right:20px;
-}
-
-.bunga3{
-  bottom:15px;
-  left:25px;
-}
-
-.bunga4{
-  bottom:15px;
-  right:25px;
-}
-/* CSS Navigasi */
+/* --- CSS NAVIGASI (FIXED) --- */
 .nav-bottom {
     position: fixed;
     bottom: 0;
@@ -322,27 +191,81 @@ body{
     padding: 10px 0;
     z-index: 9999;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-
-    /* INI KUNCINYA: Sembunyikan ke bawah layar di awal */
-    transform: translateY(100%); 
+    transform: translateY(100%); /* Sembunyi di awal */
     transition: transform 0.5s ease-in-out;
 }
 
-/* Class ini akan dipicu oleh JavaScript */
 .nav-bottom.show {
     transform: translateY(0) !important;
 }
-      <style>
-      
-     <script>
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.nav-item.active {
+    color: #ff4d4d;
+}
+</style>
+</head>
+
+<body>
+
+<section class="cover">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="welcome">WELCOME TO THE WEDDING OF</div>
+    <img src="pasangan.png" class="foto">
+    <div class="nama">Asep Ilyas <br>&<br> Ai Siti Rahmawati</div>
+    <div class="save">SAVE THE DATE</div>
+    <div class="tanggal">07 Juni 2026</div>
+    <a href="#ayat" class="btn" id="btn-buka">💌 Buka Undangan</a>
+  </div>
+</section>
+
+<div class="nav-bottom">
+  <a href="#ayat" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
+  <a href="#couple" class="nav-item"><i class="fas fa-heart"></i><span>Couple</span></a>
+  <a href="#waktu" class="nav-item"><i class="fas fa-calendar-check"></i><span>Acara</span></a>
+  <a href="#lokasi" class="nav-item"><i class="fas fa-map-marker-alt"></i><span>Lokasi</span></a>
+  <a href="#gift" class="nav-item"><i class="fas fa-gift"></i><span>Gift</span></a>
+  <a href="#rsvp" class="nav-item"><i class="fas fa-envelope-open-text"></i><span>RSVP</span></a>
+</div>
+
+<section class="ayat-section" id="ayat">
+  <div class="ayat-box">
+    <div class="bunga bunga1">🌸</div>
+    <div class="bunga bunga2">🌿</div>
+    <div class="bunga bunga3">🌸</div>
+    <div class="bunga bunga4">🌿</div>
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+    <div class="arab">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا...</div>
+    <div class="arti">“Dan di antara tanda-tanda kekuasaan-Nya...”</div>
+    <div class="sumber">— QS. Ar-Rum : 21</div>
+  </div>
+</section>
+
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const tombolBuka = document.getElementById('btn-buka');
     const navigasi = document.querySelector('.nav-bottom');
 
     if (tombolBuka) {
       tombolBuka.addEventListener('click', function() {
-        // Tambahkan class 'show' agar navigasi muncul
+        // 1. Munculkan Navigasi
         navigasi.classList.add('show');
+        // 2. Aktifkan scroll pada body
+        document.body.style.overflow = "auto";
       });
     }
   });
