@@ -59,10 +59,12 @@
   }
 
   .welcome{
-    font-size:18px;
-    letter-spacing:4px;
+    font-size:36px;
+    letter-spacing:2px;
+    line-height:1.2;
     margin-bottom:35px;
-    font-weight:300;
+    font-weight:700;
+    text-transform:uppercase;
   }
 
   .foto{
@@ -76,7 +78,7 @@
   }
 
   .nama{
-    font-family:'Great Vibes', cursive;
+    font-family:'Algerian', serif;
     font-size:58px;
     line-height:1.2;
     margin-bottom:35px;
@@ -295,7 +297,7 @@
   .bunga-wanita { bottom: -10px; left: -10px; }
 
   .nama-mempelai {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Algerian', serif;
     font-size: 38px;
     margin-bottom: 5px;
   }
@@ -303,7 +305,7 @@
   .putra-dari { font-size: 14px; opacity: 0.8; }
 
   .dan-tanda {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Algerian', serif;
     font-size: 45px;
     text-align: center;
     margin: 20px 0;
@@ -319,7 +321,7 @@
   }
 
   .menuju {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Algerian', serif;
     font-size: 32px;
     margin-bottom: 20px;
     color: white;
@@ -382,7 +384,7 @@
   }
 
   .judul-acara {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Algerian', serif;
     font-size: 50px;
     margin-bottom: 50px;
   }
@@ -407,7 +409,7 @@
   }
 
   .nama-acara {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Algerian', serif;
     font-size: 40px;
     margin-bottom: 10px;
   }
@@ -539,8 +541,9 @@
       height: 350px;
       border-width: 5px;
     }
-    /* KURUNG INI YANG TADI ERROR, SEKARANG SUDAH BENAR */
-/* --- CSS BARU UNTUK GIFT, RSVP & FOOTER --- */
+  }
+
+  /* --- CSS BARU UNTUK GIFT, RSVP & FOOTER --- */
   .gift-section, .rsvp-section { 
     padding: 80px 20px; 
     text-align: center; 
@@ -565,105 +568,106 @@
   .gift-wrapper { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;}
   
   .gift-card{
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 30px 25px;
-  border-radius: 25px;
-  width: 320px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-  transition: 0.3s;
-}
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 30px 25px;
+    border-radius: 25px;
+    width: 320px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: 0.3s;
+  }
 
-.gift-card:hover{
-  transform: translateY(-8px);
-}
+  .gift-card:hover{
+    transform: translateY(-8px);
+  }
 
-.bank-logo{
-  width: 120px;
-  height: auto;
-  margin: 10px auto 20px;
-  display: block;
-}
+  .bank-logo{
+    width: 120px;
+    height: auto;
+    margin: 10px auto 20px;
+    display: block;
+  }
 
-.nomor-rek{
-  font-size: 22px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
+  .nomor-rek{
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
 
-.atas-nama{
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
+  .atas-nama{
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
 
-.btn-copy{
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  background: white;
-  color: #333;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
+  .btn-copy{
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: white;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-.btn-copy:hover{
-  background: #ff4d4d;
-  color: white;
-}
-  .rsvp-box{
-  max-width: 550px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 35px;
-  border-radius: 30px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
+  .btn-copy:hover{
+    background: #ff4d4d;
+    color: white;
+  }
   
- .rsvp-box input,
-.rsvp-box select,
-.rsvp-box textarea{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:none;
-  border-radius:15px;
-  background: rgba(255,255,255,0.15);
-  color:white;
-  font-size:14px;
-  outline:none;
-  backdrop-filter: blur(5px);
-}
+  .rsvp-box{
+    max-width: 550px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  }
+  
+  .rsvp-box input,
+  .rsvp-box select,
+  .rsvp-box textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:15px;
+    background: rgba(255,255,255,0.15);
+    color:white;
+    font-size:14px;
+    outline:none;
+    backdrop-filter: blur(5px);
+  }
 
-.rsvp-box input::placeholder,
-.rsvp-box textarea::placeholder{
-  color: rgba(255,255,255,0.7);
-}
-    .rsvp-box select option{
-  color:black;
-}
+  .rsvp-box input::placeholder,
+  .rsvp-box textarea::placeholder{
+    color: rgba(255,255,255,0.7);
+  }
+  .rsvp-box select option{
+    color:black;
+  }
   .btn-send{
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:50px;
-  background: linear-gradient(135deg,#d4af37,#f7e7a9);
-  color:#333;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-  box-shadow:0 8px 20px rgba(212,175,55,0.3);
-}
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background: linear-gradient(135deg,#d4af37,#f7e7a9);
+    color:#333;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(212,175,55,0.3);
+  }
 
-.btn-send:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 25px rgba(212,175,55,0.5);
-}
+  .btn-send:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(212,175,55,0.5);
+  }
   
   .footer-section { 
     padding: 100px 20px; text-align: center; 
@@ -675,7 +679,7 @@
     background: rgba(0,0,0,0.7); 
   }
   .footer-container { position: relative; z-index: 2; }
-  .judul-griet { font-family: 'Great Vibes', cursive; font-size: 40px; margin-bottom: 20px; }
+  .judul-griet { font-family: 'Algerian', serif; font-size: 40px; margin-bottom: 20px; }
 
   /* ANIMASI SCROLL KESELURUHAN */
   .animate-on-scroll {
@@ -688,119 +692,121 @@
     opacity: 1;
     transform: translateY(0);
   }
-    @media (max-width: 480px){
+  
+  @media (max-width: 480px){
+    .content{
+      padding: 15px;
+      justify-content: center;
+    }
 
-  .content{
-    padding: 15px;
-    justify-content: center;
+    .welcome{
+      font-size: 26px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+
+    .foto{
+      width: 160px;
+      height: 160px;
+      margin-bottom: 20px;
+    }
+
+    .nama{
+      font-size: 40px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .save{
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .tanggal{
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+
+    .btn{
+      padding: 12px 25px;
+      font-size: 14px;
+    }
+
+    .cover{
+      padding: 20px;
+    }
+    
+    .stats-wrapper{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+
+    .stat-card{
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:20px;
+      padding:20px;
+      width:140px;
+      color:white;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .stat-card h3{
+      font-size:32px;
+      margin-bottom:5px;
+    }
+
+    .stat-card p{
+      font-size:14px;
+      opacity:0.8;
+    }
+
+    .ucapan-wrapper{
+      margin-top:40px;
+      max-width:600px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .judul-ucapan{
+      color:white;
+      margin-bottom:20px;
+      font-size:28px;
+      font-family:'Algerian', serif;
+    }
+
+    .ucapan-item{
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:20px;
+      padding:20px;
+      margin-bottom:15px;
+      color:white;
+      text-align:left;
+    }
+
+    .ucapan-item h4{
+      margin-bottom:8px;
+      font-size:16px;
+    }
+
+    .ucapan-item p{
+      opacity:0.9;
+      line-height:1.6;
+    }
+
+    .ucapan-status{
+      margin-top:10px;
+      font-size:12px;
+      opacity:0.7;
+    }
   }
-
-  .welcome{
-    font-size: 14px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-  }
-
-  .foto{
-    width: 160px;
-    height: 160px;
-    margin-bottom: 20px;
-  }
-
-  .nama{
-    font-size: 40px;
-    margin-bottom: 20px;
-    line-height: 1.1;
-  }
-
-  .save{
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .tanggal{
-    font-size: 24px;
-    margin-bottom: 25px;
-  }
-
-  .btn{
-    padding: 12px 25px;
-    font-size: 14px;
-  }
-
-  .cover{
-    padding: 20px;
-  }
-      .stats-wrapper{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
-}
-
-.stat-card{
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:20px;
-  padding:20px;
-  width:140px;
-  color:white;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.stat-card h3{
-  font-size:32px;
-  margin-bottom:5px;
-}
-
-.stat-card p{
-  font-size:14px;
-  opacity:0.8;
-}
-
-.ucapan-wrapper{
-  margin-top:40px;
-  max-width:600px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.judul-ucapan{
-  color:white;
-  margin-bottom:20px;
-  font-size:28px;
-  font-family:'Great Vibes', cursive;
-}
-
-.ucapan-item{
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:20px;
-  padding:20px;
-  margin-bottom:15px;
-  color:white;
-  text-align:left;
-}
-
-.ucapan-item h4{
-  margin-bottom:8px;
-  font-size:16px;
-}
-
-.ucapan-item p{
-  opacity:0.9;
-  line-height:1.6;
-}
-
-.ucapan-status{
-  margin-top:10px;
-  font-size:12px;
-  opacity:0.7;
-}
-
 
 </style>
 </head>
@@ -824,8 +830,8 @@
   <a href="#couple" class="nav-item"><i class="fas fa-heart"></i><span>Couple</span></a>
   <a href="#waktu" class="nav-item"><i class="fas fa-calendar-check"></i><span>Acara</span></a>
   <a href="#lokasi" class="nav-item"><i class="fas fa-map-marker-alt"></i><span>Lokasi</span></a>
-  <a href="#gift" class="nav-item"><i class="fas fa-gift"></i><span>Gift</span></a>
   <a href="#rsvp" class="nav-item"><i class="fas fa-envelope-open-text"></i><span>RSVP</span></a>
+  <a href="#gift" class="nav-item"><i class="fas fa-gift"></i><span>Gift</span></a>
 </div>
 
 <section class="ayat-section" id="ayat">
@@ -868,7 +874,7 @@
       </div>
       <div class="info-mempelai">
         <h2 class="nama-mempelai">Ai Siti Rahmawati</h2>
-        <p class="putra-dari">Putri dari Bapak Imat Ruhimat & Ibu Maryati </p>
+        <p class="putra-dari">Putri dari Bapak Imat Ruhimat & Ibu Fulan </p>
       </div>
     </div>
   </div>
@@ -943,37 +949,7 @@
   </div>
 </section>
 
-<section class="gift-section" id="gift">
-  <div class="gift-container animate-on-scroll">
-    <h2 class="judul-griet">Wedding Gift</h2>
-    <p class="sub-judul" style="margin-bottom:30px;">Doa restu Anda merupakan karunia terindah, namun jika ingin memberikan tanda kasih, silakan melalui:</p>
-    
-    <div class="gift-wrapper">
-      <div class="gift-card">
-  <img src="bri.png" alt="BRI" class="bank-logo">
-
-  <p class="nomor-rek">444401015688504</p>
-  <p class="atas-nama">A.n Asep Ilyas</p>
-
-  <button class="btn-copy" onclick="salinTeks('444401015688504')">
-    <i class="far fa-copy"></i> Salin Rekening
-  </button>
-</div>
-
-<div class="gift-card">
-  <img src="dana.png" alt="DANA" class="bank-logo">
-
-  <p class="nomor-rek">6282317958531</p>
-  <p class="atas-nama">A.n Asep Ilyas</p>
-
-  <button class="btn-copy" onclick="salinTeks('6282317958531')">
-    <i class="far fa-copy"></i> Salin Nomor
-  </button>
-</div>
-    </div>
-  </div>
-</section>
-  
+<!-- RSVP SEKARANG DI SINI -->
 <section class="rsvp-section" id="rsvp">
   <div class="rsvp-container animate-on-scroll">
     <h2 class="judul-griet">Konfirmasi Kehadiran</h2>
@@ -1025,11 +1001,43 @@
   </div>
 </section>
 
+<!-- GIFT SEKARANG DI BAWAH RSVP -->
+<section class="gift-section" id="gift">
+  <div class="gift-container animate-on-scroll">
+    <h2 class="judul-griet">Wedding Gift</h2>
+    <p class="sub-judul" style="margin-bottom:30px;">Doa restu Anda merupakan karunia terindah, namun jika ingin memberikan tanda kasih, silakan melalui:</p>
+    
+    <div class="gift-wrapper">
+      <div class="gift-card">
+  <img src="bri.png" alt="BRI" class="bank-logo">
+
+  <p class="nomor-rek">444401015688504</p>
+  <p class="atas-nama">A.n Asep Ilyas S.M</p>
+
+  <button class="btn-copy" onclick="salinTeks('444401015688504')">
+    <i class="far fa-copy"></i> Salin Rekening
+  </button>
+</div>
+
+<div class="gift-card">
+  <img src="dana.png" alt="DANA" class="bank-logo">
+
+  <p class="nomor-rek">6282317958531</p>
+  <p class="atas-nama">A.n Asep Ilyas S.M</p>
+
+  <button class="btn-copy" onclick="salinTeks('6282317958531')">
+    <i class="far fa-copy"></i> Salin Nomor
+  </button>
+</div>
+    </div>
+  </div>
+</section>
+
 <section class="footer-section">
   <div class="footer-container animate-on-scroll">
     <p class="ucapan-terima-kasih" style="margin-bottom:20px;">Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
     <h2 class="judul-griet">Terima Kasih</h2>
-    <div class="nama-akhir" style="font-family:'Great Vibes', cursive; font-size:35px;">Asep & Ai Siti</div>
+    <div class="nama-akhir" style="font-family:'Algerian', serif; font-size:35px;">Asep & Ai Siti</div>
     <div class="copyright" style="margin-top:40px; font-size:12px; opacity:0.7;">Dibuat oleh Nur Alam (082114261977)</div>
   </div>
 </section>
